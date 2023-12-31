@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recepción de Imagen</title>
+</head>
+<body>
+    <h1>Recepción de Imagen</h1>
+    <form action="/receive_image" method="POST">
+        <label for="image_url">URL de la Imagen:</label>
+        <input type="text" name="image_url" id="image_url">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    
+    <!-- Mostrar la imagen si está disponible -->
+    {% if image %}
+        <img src="data:image/jpeg;base64,{{ image }}" alt="Imagen recibida">
+    {% endif %}
+</body>
+</html>
